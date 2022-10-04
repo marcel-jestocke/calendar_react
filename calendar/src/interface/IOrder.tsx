@@ -21,3 +21,4 @@ export default interface IOrder {
   customer: Array<string|number|boolean>
   warehouse: Array<string|number|boolean>
   }
+  
