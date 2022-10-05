@@ -14,9 +14,15 @@ function BigCalendar(props:any) {
     const response = await getAllOrders();
     setOrders(response.results);
   };
+  useEffect(() => {
+    try {
+      handleRequest();
+    } catch (error) {
+      console.error(error);
+    }
+  }, []);
   const dateValue = props.dateValue
   console.log(dateValue)
-  
 
   // const calendar = new CalendarApi;
   
@@ -53,7 +59,7 @@ orders.map((order) => {
     selectable={false}
     editable={false}
     weekends={true}
-    
+    initialEvents={events}
     dayHeaderFormat={{
       week:"numeric",
       day:"2-digit",
